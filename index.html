@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency as a Career - LIC Jamshedpur Division</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #60a5fa;
+            --secondary: #3b82f6;
+            --accent: #fbbf24;
+            --gradient-start: #1e3a8a;
+            --gradient-end: #3b82f6;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text: #f8fafc;
+            --text-muted: #cbd5e1;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+        
+        .slide {
+            min-height: 100vh; min-height: 100dvh;
+            height: 100vh; height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Gradient background for title slides */
+        .slide-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+        }
+        
+        .slide-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(251, 191, 36, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(96, 165, 250, 0.2) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        
+        /* Animated geometric shapes */
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--accent);
+            top: 10%;
+            right: 10%;
+        }
+        
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background: var(--primary);
+            bottom: 15%;
+            left: 5%;
+            animation-delay: 5s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+        
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+        /* Top gradient bar for dark content slides */
+        .slide-dark::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--gradient-start), var(--secondary), var(--accent));
+        }
+        
+        /* Typography */
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(3rem, 7vw, 6rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 2rem;
+        }
+        
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+        }
+        
+        p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            line-height: 1.6;
+        }
+        
+        /* Title Slide */
+        .title-slide .logo-text {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+        
+        .title-slide h1 {
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .title-slide .tagline {
+            font-size: clamp(1.3rem, 2.8vw, 2rem);
+            font-weight: 600;
+            margin-top: 2rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .title-slide .divider {
+            width: 150px;
+            height: 5px;
+            background: var(--accent);
+            margin: 2rem auto;
+        }
+        
+        /* Section Headers */
+        .section-header {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2.5rem;
+        }
+        
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60%;
+            height: 6px;
+            background: var(--accent);
+        }
+        
+        /* Content Boxes */
+        .content-box {
+            background: var(--bg-card);
+            border-left: 6px solid var(--primary);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .content-box:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.3);
+            border-left-color: var(--accent);
+        }
+        
+        .content-box:hover::before {
+            left: 100%;
+        }
+        
+        /* Number Badge */
+        .number-badge {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Lists */
+        .styled-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .styled-list li {
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            background: var(--bg-card);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            transition: all 0.3s ease;
+        }
+        
+        .styled-list li:hover {
+            transform: translateX(10px);
+            border-left-color: var(--accent);
+        }
+        
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        /* Feature Cards */
+        .feature-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(96, 165, 250, 0.2);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.3);
+            border-color: var(--primary);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Advantage Cards */
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .advantage-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .advantage-card:hover {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+        
+        .advantage-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .advantage-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .advantage-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            font-size: clamp(0.85rem, 1.5vw, 1rem);
+        }
+        
+        .data-table thead {
+            background: linear-gradient(135deg, var(--gradient-start), var(--secondary));
+        }
+        
+        .data-table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 700;
+            border: 1px solid rgba(96, 165, 250, 0.3);
+        }
+        
+        .data-table td {
+            padding: 1rem;
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            background: var(--bg-card);
+        }
+        
+        .data-table tbody tr:hover {
+            background: rgba(96, 165, 250, 0.1);
+        }
+        
+        /* Stat Highlight */
+        .stat-box {
+            background: linear-gradient(135deg, var(--gradient-start), var(--secondary));
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .stat-box .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-box .stat-label {
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            font-weight: 600;
+        }
+        
+        /* Highlight Box */
+        .highlight-box {
+            background: rgba(251, 191, 36, 0.15);
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .highlight-box h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        /* Two Column Layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        @media (max-width: 768px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Progress Bar */
+        .slide-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(96, 165, 250, 0.2);
+            z-index: 1000;
+        }
+        
+        .slide-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        /* Navigation Dots */
+        .slide-nav {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(96, 165, 250, 0.3);
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-dot:hover {
+            background: var(--primary);
+            transform: scale(1.3);
+        }
+        
+        .nav-dot.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            transform: scale(1.2);
+        }
+        
+        /* Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        
+        /* Centered content */
+        .centered {
+            text-align: center;
+        }
+        
+        /* Brand Colors */
+        .text-gold { color: var(--accent); }
+        .text-blue { color: var(--primary); }
+        
+        /* Emphasis */
+        .emphasis {
+            color: var(--accent);
+            font-weight: 700;
+        }
+        
+        strong {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-progress"><div class="slide-progress-bar"></div></div>
+    <nav class="slide-nav">
+        <button class="nav-dot" data-slide="0"></button>
+        <button class="nav-dot" data-slide="1"></button>
+        <button class="nav-dot" data-slide="2"></button>
+        <button class="nav-dot" data-slide="3"></button>
+        <button class="nav-dot" data-slide="4"></button>
+        <button class="nav-dot" data-slide="5"></button>
+        <button class="nav-dot" data-slide="6"></button>
+        <button class="nav-dot" data-slide="7"></button>
+        <button class="nav-dot" data-slide="8"></button>
+        <button class="nav-dot" data-slide="9"></button>
+        <button class="nav-dot" data-slide="10"></button>
+        <button class="nav-dot" data-slide="11"></button>
+        <button class="nav-dot" data-slide="12"></button>
+        <button class="nav-dot" data-slide="13"></button>
+        <button class="nav-dot" data-slide="14"></button>
+        <button class="nav-dot" data-slide="15"></button>
+        <button class="nav-dot" data-slide="16"></button>
+        <button class="nav-dot" data-slide="17"></button>
+        <button class="nav-dot" data-slide="18"></button>
+        <button class="nav-dot" data-slide="19"></button>
+        <button class="nav-dot" data-slide="20"></button>
+        <button class="nav-dot" data-slide="21"></button>
+        <button class="nav-dot" data-slide="22"></button>
+        <button class="nav-dot" data-slide="23"></button>
+        <button class="nav-dot" data-slide="24"></button>
+        <button class="nav-dot" data-slide="25"></button>
+        <button class="nav-dot" data-slide="26"></button>
+        <button class="nav-dot" data-slide="27"></button>
+        <button class="nav-dot" data-slide="28"></button>
+        <button class="nav-dot" data-slide="29"></button>
+    </nav>
+    
+    <!-- Slide 1: Title -->
+    <section class="slide slide-gradient" data-slide="0">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="slide-content centered">
+            <div class="logo-text reveal">जागृति | Training for Agents | Jamshedpur Division</div>
+            <h1 class="reveal reveal-delay-1">Agency as<br>a Career</h1>
+            <div class="divider reveal reveal-delay-2"></div>
+            <p class="tagline reveal reveal-delay-3">Empower · Energize · Expand</p>
+        </div>
+    </section>
+    
+    <!-- Slide 2: Work of LIC Agent -->
+    <section class="slide slide-dark" data-slide="1">
+        <div class="slide-content">
+            <h2 class="section-header reveal">Work of LIC Agent ???</h2>
+            <div class="grid-2">
+                <div class="content-box reveal reveal-delay-1">
+                    <div class="number-badge">01</div>
+                    <h3>Prevailing Notions</h3>
+                    <p>What people commonly think about LIC agents</p>
+                </div>
+                <div class="content-box reveal reveal-delay-2">
+                    <div class="number-badge">02</div>
+                    <h3>Recruitment Information</h3>
+                    <p>What you learned during recruitment process</p>
+                </div>
+            </div>
+            <div class="highlight-box reveal reveal-delay-3">
+                <h3>Interactive Session</h3>
+                <p>Self-study and questions from participants</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Slide 3: Prevailing Notions -->
+    <section class="slide slide-dark" data-slide="2">
+        <div class="slide-content centered">
+            <h2 class="reveal">Prevailing Notions</h2>
+            <p class="reveal reveal-delay-1" style="font-size: clamp(1.5rem, 3vw, 2.5rem); color: var(--text-muted); margin-top: 2rem;">General Public Perceptions</p>
+        </div>
+    </section>
+    
+    <!-- Slide 4: Agents Examples -->
+    <section class="slide slide-dark" data-slide="3">
+        <div class="slide-content">
+            <h2 class="section-header reveal">Agents in Our Surroundings</h2>
+            <p class="reveal reveal-delay-1" style="font-size: 1.3rem; margin-bottom: 2rem;">Examples we see around us:</p>
+            <div class="grid-2">
+                <div class="feature-card reveal reveal-delay-2">
+                    <div class="feature-icon">💰</div>
+                    <h3>Financial Status</h3>
+                    <p>Both financially sound and weak agents exist</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-3">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Reputation</h3>
+                    <p>Both well-reputed and less-reputed agents exist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Slide 5: Why Join as Agent -->
+    <section class="slide slide-dark" data-slide="4">
+        <div class="slide-content">
+            <h2 class="section-header reveal">Why Have You Joined as Agent?</h2>
+            <ul class="styled-list">
+                <li class="reveal reveal-delay-1">Was doing nothing and seeking some employment</li>
+                <li class="reveal reveal-delay-2">No option was available</li>
+                <li class="reveal reveal-delay-3">Part-time employment opportunity</li>
+                <li class="reveal reveal-delay-4">Wanted to earn money without big degree and background</li>
+                <li class="reveal reveal-delay-4">Seeking a genuine career</li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- Slide 6: What is Insurance -->
+    <section class="slide slide-dark" data-slide="5">
+        <div class="slide-content">
+            <h2 class="section-header reveal">What is Life Insurance?</h2>
+            <div class="content-box reveal reveal-delay-1">
+                <h3>As a Subject Matter</h3>
+                <p>A unique mixture of <span class="emphasis">Finance, Math, Management, Economics, and Psychology</span></p>
+            </div>
+            <div class="grid-3" style="margin-top: 2rem;">
+                <div class="feature-card reveal reveal-delay-2">
+                    <h3 class="text-blue">Service</h3>
+                </div>
+                <div class="feature-card reveal reveal-delay-2">
+                    <h3 class="text-blue">Business</h3>
+                </div>
+                <div class="feature-card reveal reveal-delay-2">
+                    <h3 class="text-blue">Consultancy</h3>
+                </div>
+            </div>
+            <div class="stat-box reveal reveal-delay-3">
+                <span class="stat-number">10th</span>
+                <span class="stat-label">Largest Insurance Industry in the World</span>
+                <p style="margin-top: 1rem; font-size: 1.1rem;"><strong>$131 Billion</strong> | <span class="text-gold">6.5% YoY Growth</span></p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Slide 7: LIC World's Strongest Brand -->
+    <section class="slide slide-gradient" data-slide="6">
+        <div class="slide-content centered">
+            <h1 class="reveal" style="font-size: clamp(2.5rem, 6vw, 5rem);">LIC<br>World's <span class="text-gold">STRONGEST</span><br>Insurance Brand</h1>
+            <div class="divider reveal reveal-delay-1"></div>
+            <div class="stat-box reveal reveal-delay-2" style="margin-top: 3rem;">
+                <span class="stat-number">USD 9.8 Billion</span>
+                <span class="stat-label">Brand Value with AAA Strength Rating</span>
+            </div>
+            <p class="reveal reveal-delay-3" style="font-size: 1.1rem; margin-top: 2rem; font-weight: 600;">By "Brand Finance Insurance 100 2024"</p>
+        </div>
+    </section>
+    
+    <!-- Slide 8: LIC Achievements -->
+    <section class="slide slide-dark" data-slide="7">
+        <div class="slide-content">
+            <h2 class="section-header reveal">LIC's Market Position</h2>
+            <div class="grid-2">
+                <div class="content-box reveal reveal-delay-1">
+                    <h3 class="text-gold">Stock Performance</h3>
+                    <p>Shares reached all-time high of <strong>₹1,175</strong></p>
+                </div>
+                <div class="content-box reveal reveal-delay-2">
+                    <h3 class="text-gold">PSU Leadership</h3>
+                    <p>India's <strong>most valuable PSU company</strong></p>
+                </div>
+            </div>
+            <div class="stat-box reveal reveal-delay-3">
+                <span class="stat-number">5th</span>
+                <span class="stat-label">Most Valuable Indian Listed Company</span>
+                <p style="margin-top: 1rem;">- The Economic Times</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Slide 9: Transition -->
+    <section class="slide slide-gradient" data-slide="8">
+        <div class="slide-content centered">
+            <h1 class="reveal">Compare the<br><span class="text-gold">Investment</span></h1>
+        </div>
+    </section>
+    
+    <!-- Slide 10: Investment Comparison Table -->
+    <section class="slide slide-dark" data-slide="9">
+        <div class="slide-content">
+            <h2 class="section-header reveal">Professional Career Comparison</h2>
+            <p class="reveal reveal-delay-1" style="margin-bottom: 1rem;">Investment of Time, Money, Resources & Settlement Time:</p>
+            <table class="data-table reveal reveal-delay-2">
+                <thead>
+                    <tr>
+                        <th>Profession</th>
+                        <th>Qualification</th>
+                        <th>Investment</th>
+                        <th>Time</th>
+                        <th>Settlement</th>
+                        <th>Resources</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Doctor</strong></td>
+                        <td>MBBS + MD</td>
+                        <td>₹30-40 Lakh</td>
+                        <td>7 years</td>
+                        <td>7-10 years</td>
+                        <td>Clinic/Nursing home</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lawyer</strong></td>
+                        <td>LLB + LLM</td>
+                        <td>₹1-2 Lakh</td>
+                        <td>5 years</td>
+                        <td>15-20 years</td>
+                        <td>Chamber in court</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CA</strong></td>
+                        <td>BCom + ICWA</td>
+                        <td>₹4-5 Lakh</td>
+                        <td>8 years</td>
+                        <td>10-15 years</td>
+                        <td>An Office</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    
+    <!-- Slide 11: Agent Investment -->
+    <section class="slide slide-gradient" data-slide="10">
+        <div class="slide-content">
+            <h2 class="section-header reveal">LIC Agent Requirements</h2>
+            <div class="grid-2">
+                <div class="content-box reveal reveal-delay-1" style="background: rgba(255,255,255,0.1);">
+                    <h3 class="text-gold">Qualification</h3>
+                    <p style="font-size: 1.5rem;">10th & 12th</p>
+                </div>
+                <div class="content-box reveal reveal-delay-2" style="background: rgba(255,255,255,0.1);">
+                    <h3 class="text-gold">Investment</h3>
+                    <p style="font-size: 1.5rem;">₹750/-</p>
+                </div>
+                <div class="content-box reveal reveal-delay-3" style="background: rgba(255,255,255,0.1);">
+                    <h3 class="text-gold">Time Required</h3>
+                    <p style="font-size: 1.5rem;">2-3 months</p>
+                </div>
+                <div class="content-box reveal reveal-delay-4" style="background: rgba(255,255,255,0.1);">
+                    <h3 class="text-gold">Settlement</h3>
+                    <p style="font-size: 1.5rem;">5 years</p>
+                </div>
+            </div>
+            <div class="highlight-box reveal reveal-delay-4" style="margin-top: 2rem;">
+                <h3>Resources Needed</h3>
+                <p style="font-size: 1.3rem;">Mobile + Laptop | Being Smart + Updated</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Slide 12: Be a BOSS -->
+    <section class="slide slide-gradient" data-slide="11">
+        <div class="slide-content centered">
+            <h1 class="reveal" style="font-size: clamp(3rem, 7vw, 6rem);">Be a <span class="text-gold">BOSS</span></h1>
+            <div class="divider reveal reveal-delay-1"></div>
+            <p class="reveal reveal-delay-2" style="font-size: clamp(1.5rem, 3vw, 2.5rem); margin-top: 2rem;">Embracing the Future:<br>LIC Agency as a CAREER</p>
+        </div>
+    </section>
+    
+    <!-- Slide 13: Most Needed -->
+    <section class="slide slide-dark" data-slide="12">
+        <div class="slide-content centered">
+            <h2 class="reveal">The Most Needed<br>for Being an Agent</h2>
+            <p class="reveal reveal-delay-1" style="font-size: 1.5rem; margin-top: 3rem; color: var(--text-muted);">Dedication • Communication • Digital Skills</p>
+        </div>
+    </section>
+    
+    <!-- Slide 14: Formula of Success -->
+    <section class="slide slide-dark" data-slide="13">
+        <div class="slide-content">
+            <h2 class="section-header reveal">Formula of Success for an Agent</h2>
+            <div class="stat-box reveal reveal-delay-1">
+                <span class="stat-number">AAA</span>
+                <span class="stat-label">Attitude • Aptitude • Action</span>
+            </div>
+            <div class="grid-2" style="margin-top: 2rem;">
+                <div class="content-box reveal reveal-delay-2">
+                    <h3 class="text-gold">Digital Presence</h3>
+                    <p><strong>Ananda Platform</strong> - Complete proposals anytime, anywhere</p>
+                </div>
+                <div class="content-box reveal reveal-delay-3">
+                    <h3 class="text-gold">Sales Sathi</h3>
+                    <p>Your digital sales companion for success</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Slide 15: Transition -->
+    <section class="slide slide-gradient" data-slide="14">
+        <div class="slide-content centered">
+            <h1 class="reveal">Professional<br><span class="text-gold">Advantages</span></h1>
+        </div>
+    </section>
+    
+    <!-- Slide 16: Advantages -->
+    <section class="slide slide-dark" data-slide="15">
+        <div class="slide-content">
+            <h2 class="section-header reveal">ADVANTAGES</h2>
+            <div class="advantage-grid">
+                <div class="advantage-card reveal reveal-delay-1">
+                    <div class="icon">🏆</div>
+                    <h3>Renowned Brand</h3>
+                    <p>Partner with world's strongest insurance brand</p>
+                </div>
+                <div class="advantage-card reveal reveal-delay-1">
+                    <div class="icon">💰</div>
+                    <h3>High Income</h3>
+                    <p>Unlimited earning potential</p>
+                </div>
+                <div class="advantage-card reveal reveal-delay-2">
+                    <div class="icon">⏰</div>
+                    <h3>Convenience</h3>
+                    <p>No time-bound routine</p>
+                </div>
+                <div class="advantage-card reveal reveal-delay-2">
+                    <div class="icon">🎯</div>
+                    <h3>Rewards</h3>
+                    <p>Recognition programs</p>
+                </div>
+                <div class="advantage-card reveal reveal-delay-3">
+                    <div class="icon">📚</div>
+                    <h3>Training</h3>
+                    <p>Best-in-class education</p>
+                </div>
+                <div class="advantage-card reveal reveal-delay-3">
+                    <div class="icon">🚀</div>
+                    <h3>Career Path</h3>
+                    <p>Path to mainstream employment</p>
+                </div>
+                <div class="advantage-card reveal reveal-delay-4">
+                    <div class="icon">♾️</div>
+                    <h3>No Age Limit</h3>
+                    <p>Work lifetime</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Slide 17: Transition Benefits -->
+    <section class="slide slide-gradient" data-slide="16">
+        <div class="slide-content centered">
+            <h1 class="reveal">Financial<br><span class="text-gold">Benefits</span></h1>
+        </div>
+    </section>
+    
+    <!-- Slide 18: Benefits Intro -->
+    <section class="slide slide-dark" data-slide="17">
+        <div class="slide-content centered">
+            <h2 class="reveal">Comprehensive Benefit Package</h2>
+            <p class="reveal reveal-delay-1" style="font-size: 1.5rem; margin-top: 2rem; color: var(--text-muted);">Advances • Loans • Support</p>
+        </div>
+    </section>
+    
+    <!-- Slide 19: Housing Loan -->
+    <section class="slide slide-dark" data-slide="18">
+        <div class="slide-content">
+            <h2 class="section-header reveal">Housing Loan Scheme</h2>
+            <p class="reveal reveal-delay-1" style="margin-bottom: 1rem;">Club Member Benefits:</p>
+            <table class="data-table reveal reveal-delay-2">
+                <thead>
+                    <tr>
+                        <th>Club</th>
+                        <th>Basic Loan (5%)</th>
+                        <th>Extended Loan (8.5%)</th>
+                        <th>Total Loan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Corporate</strong></td>
+                        <td>₹28.00 Lakh</td>
+                        <td>₹32.00 Lakh</td>
+                        <td class="text-gold"><strong>₹60.00 Lakh</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Galaxy</strong></td>
+                        <td>₹21.25 Lakh</td>
+                        <td>₹28.75 Lakh</td>
+                        <td class="text-gold"><strong>₹50.00 Lakh</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>CM's</strong></td>
+                        <td>₹18.50 Lakh</td>
+                        <td>₹21.50 Lakh</td>
+                        <td class="text-gold"><strong>₹40.00 Lakh</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>ZM's</strong></td>
+                        <td>₹11.25 Lakh</td>
+                        <td>₹13.75 Lakh</td>
+                        <td class="text-gold"><strong>₹25.00 Lakh</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>DM's</strong></td>
+                        <td>₹9.00 Lakh</td>
+                        <td>₹11.00 Lakh</td>
+                        <td class="text-gold"><strong>₹20.00 Lakh</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    
+    <!-- Slide 20: Vehicle Advance -->
+    <section class="slide slide-dark" data-slide="19">
+        <div class="slide-content">
+            <h2 class="section-header reveal">Vehicle Advance</h2>
+            <div class="grid-2">
+                <div class="reveal reveal-delay-1">
+                    <h3 class="text-gold" style="margin-bottom: 1rem;">🚗 4 Wheeler</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Club</th>
+                                <th>Eligible Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Corporate</td>
+                                <td>₹20 Lac</td>
+                            </tr>
+                            <tr>
+                                <td>Galaxy</td>
+                                <td>₹15 Lac</td>
+                            </tr>
+                            <tr>
+                                <td>Chairman</td>
+                                <td>₹9 Lac</td>
+                            </tr>
+                            <tr>
+                                <td>ZM</td>
+                                <td>₹7 Lac</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">Full purchase price or 75% of last 2 years RC</p>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <h3 class="text-gold" style="margin-bottom: 1rem;">🛵 2 Wheeler</h3>
+                    <div class="content-box">
+                        <p><strong>Interest Free</strong> for any club</p>
+                        <p style="margin-top: 1rem;">Subject to 75% of last 2 years RC</p>
+                    </div>
+                    <div class="highlight-box" style="margin-top: 1rem;">
+                        <p>Other agents below ZM Club: Same as ZM but with <strong>9% interest rate</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Slide 21: Festival & Marriage Advances -->
+    <section class="slide slide-dark" data-slide="20">
+        <div class="slide-content">
+            <h2 class="section-header reveal">Advance Types</h2>
+            <div class="grid-2">
+                <div class="content-box reveal reveal-delay-1">
+                    <h3 class="text-gold">🎉 Festival Advance</h3>
+                    <p><strong>Eligibility:</strong> 2 full agency years</p>
+                    <p><strong>Requirement:</strong> 12 lives & ₹6 lac SA in previous year</p>
+                    <p><strong>Exempted:</strong> ₹2 lac SA in previous year</p>
+                    <p><strong>Frequency:</strong> Once per calendar year</p>
+                </div>
+                <div class="content-box reveal reveal-delay-2">
+                    <h3 class="text-gold">💍 Marriage Advance</h3>
+                    <p><strong>For:</strong> Self, Children & dependent Sisters</p>
+                    <p><strong>Amount:</strong> Actual expense or last year RC, whichever is less</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Slide 22: Other Advances -->
+    <section class="slide slide-dark" data-slide="21">
+        <div class="slide-content">
+            <h2 class="section-header reveal">Additional Advances</h2>
+            <div class="content-box reveal reveal-delay-1">
+                <h3 class="text-gold">🎊 Ceremony Advances</h3>
+                <p><strong>Types:</strong> Thread Ceremony, Turban Mundane, Navjote, Sunnat</p>
+                <p><strong>Amount:</strong> Max of LY RC or ₹75,000/- whichever is less</p>
+                <p><strong>Limit:</strong> Maximum 3 times</p>
+            </div>
+            <div class="content-box reveal reveal-delay-2">
+                <h3 class="text-gold">🌊 Flood/Drought Advance</h3>
+                <p><strong>Eligibility:</strong> Same as permanent employees</p>
+                <p><strong>Interest Free Limit:</strong> Maximum loss or max allowed to employee or LY RC, whichever is less</p>
+                <p><strong>Note:</strong> Sum total of all advances including Flood/Drought should not exceed LY RC</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Slide 23: Office Equipment -->
+    <section class="slide slide-dark" data-slide="22">
+        <div class="slide-content">
+            <h2 class="section-header reveal">Equipment Advances</h2>
+            <div class="grid-2">
+                <div class="content-box reveal reveal-delay-1">
+                    <h3 class="text-gold">🪑 Office Equipment</h3>
+                    <p><strong>Interest:</strong> Free for club members, 9% for others</p>
+                    <p><strong>Frequency:</strong> Once in 3 years, max 5 times</p>
+                    <p><strong>Note:</strong> Same furniture can be purchased after 5 years from earlier advance</p>
+                </div>
+                <div class="content-box reveal reveal-delay-2">
+                    <h3 class="text-gold">💻 Computer Advance</h3>
+                    <p><strong>Available for:</strong></p>
+                    <p>• Office Equipment - All club members (36 installments)</p>
+                    <p>• Computers only - CM club members (60 installments)</p>
+                    <p><strong>Amount:</strong> Full purchase price or ₹1 Lac or LY RC, whichever is less</p>
+                    <p><strong>Interest:</strong> 9%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Slide 24: Convenience -->
+    <section class="slide slide-gradient" data-slide="23">
+        <div class="slide-content centered">
+            <h1 class="reveal">Work at Your <span class="text-gold">PACE</span><br>from <span class="text-gold">ANYWHERE</span></h1>
+        </div>
+    </section>
+    
+    <!-- Slide 25: ANANDA Stats -->
+    <section class="slide slide-dark" data-slide="24">
+        <div class="slide-content">
+            <h2 class="section-header reveal">Digital Convenience</h2>
+            <div class="two-col">
+                <div class="reveal reveal-delay-1">
+                    <h3 class="text-gold" style="font-size: 2.5rem; margin-bottom: 1.5rem;">ANANDA</h3>
+                    <p style="font-size: 1.3rem; line-height: 1.8;">Complete <strong>proposals</strong> anytime from anywhere</p>
+                    <div class="stat-box" style="margin-top: 2rem;">
+                        <span class="stat-number">16%</span>
+                        <span class="stat-label">Active Agents in ANANDA</span>
+                    </div>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <div class="content-box">
+                        <h3 class="text-blue">Growth Opportunity</h3>
+                        <p>84% of agents yet to activate - massive potential for early adopters!</p>
+                    </div>
+                    <div class="content-box" style="margin-top: 1rem;">
+                        <h3 class="text-blue">Be Among the Leaders</h3>
+                        <p>Join the 16% who are already leveraging digital tools for success</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Slide 26: Career Graph -->
+    <section class="slide slide-gradient" data-slide="25">
+        <div class="slide-content centered">
+            <h1 class="reveal">Career Graph<br>of an<br><span class="text-gold">LIC Agent</span></h1>
+        </div>
+    </section>
+    
+    <!-- Slide 27: Transition to Chief -->
+    <section class="slide slide-dark" data-slide="26">
+        <div class="slide-content centered">
+            <h2 class="reveal">Grow Further<br>in Your Career</h2>
+            <p class="reveal reveal-delay-1" style="font-size: 1.5rem; margin-top: 2rem; color: var(--text-muted);">Leadership • Mentorship • Excellence</p>
+        </div>
+    </section>
+    
+    <!-- Slide 28: Chief Life Insurance Advisor -->
+    <section class="slide slide-dark" data-slide="27">
+        <div class="slide-content">
+            <h2 class="section-header reveal">Chief Life Insurance Advisor</h2>
+            <p class="reveal reveal-delay-1" style="font-size: 1.3rem; margin-bottom: 2rem;">Sponsor candidates to work as agents under your <strong class="text-gold">LEADERSHIP</strong> and get rewarded further</p>
+            <div class="advantage-grid">
+                <div class="advantage-card reveal reveal-delay-2">
+                    <h3>Activisation Allowance</h3>
+                </div>
+                <div class="advantage-card reveal reveal-delay-2">
+                    <h3>Training Allowance</h3>
+                </div>
+                <div class="advantage-card reveal reveal-delay-2">
+                    <h3>Productivity Linked Allowance</h3>
+                </div>
+                <div class="advantage-card reveal reveal-delay-3">
+                    <h3>Mentorship Allowance</h3>
+                </div>
+                <div class="advantage-card reveal reveal-delay-3">
+                    <h3>Club Membership Allowance</h3>
+                </div>
+                <div class="advantage-card reveal reveal-delay-3">
+                    <h3>MDRT / COT / TOT Allowance</h3>
+                </div>
+                <div class="advantage-card reveal reveal-delay-4">
+                    <h3>Brigade Allowance</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Slide 29: Thank You -->
+    <section class="slide slide-gradient" data-slide="28">
+        <div class="slide-content centered">
+            <h1 class="reveal" style="font-size: clamp(4rem, 9vw, 8rem);">THANK YOU</h1>
+            <div class="divider reveal reveal-delay-1"></div>
+            <p class="reveal reveal-delay-2" style="font-size: 1.5rem; margin-top: 2rem;">Empower. Energize. Expand.</p>
+            <p class="reveal reveal-delay-3" style="font-size: 1.2rem; margin-top: 1rem; color: var(--text-muted);">LIC Jamshedpur Division</p>
+        </div>
+    </section>
+    
+    <script>
+        // Slide Presentation Controller
+        class SlidePresentation {
+            constructor() {
+                this.slides = document.querySelectorAll('.slide');
+                this.currentSlide = 0;
+                this.init();
+            }
+            
+            init() {
+                this.setupRevealAnimations();
+                this.setupNavigation();
+                this.updateActiveSlide();
+            }
+            
+            setupRevealAnimations() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            }
+            
+            setupNavigation() {
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowRight' || e.key === ' ') {
+                        e.preventDefault();
+                        this.nextSlide();
+                    } else if (e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        this.previousSlide();
+                    }
+                });
+                
+                // Touch/swipe navigation
+                let touchStartX = 0;
+                document.addEventListener('touchstart', (e) => {
+                    touchStartX = e.touches[0].clientX;
+                });
+                document.addEventListener('touchend', (e) => {
+                    const diff = touchStartX - e.changedTouches[0].clientX;
+                    if (Math.abs(diff) > 50) {
+                        diff > 0 ? this.nextSlide() : this.previousSlide();
+                    }
+                });
+                
+                // Navigation dots
+                document.querySelectorAll('.nav-dot').forEach((dot, i) => {
+                    dot.addEventListener('click', () => this.goToSlide(i));
+                });
+                
+                // Mouse wheel navigation (throttled)
+                let wheelTimeout;
+                document.addEventListener('wheel', (e) => {
+                    clearTimeout(wheelTimeout);
+                    wheelTimeout = setTimeout(() => {
+                        e.deltaY > 0 ? this.nextSlide() : this.previousSlide();
+                    }, 50);
+                });
+            }
+            
+            goToSlide(index) {
+                if (index < 0 || index >= this.slides.length) return;
+                this.currentSlide = index;
+                this.updateActiveSlide();
+            }
+            
+            nextSlide() {
+                this.goToSlide(this.currentSlide + 1);
+            }
+            
+            previousSlide() {
+                this.goToSlide(this.currentSlide - 1);
+            }
+            
+            updateActiveSlide() {
+                this.slides[this.currentSlide].scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+                
+                // Update navigation dots
+                document.querySelectorAll('.nav-dot').forEach((dot, i) => {
+                    dot.classList.toggle('active', i === this.currentSlide);
+                });
+                
+                // Update progress bar
+                const progress = ((this.currentSlide + 1) / this.slides.length) * 100;
+                document.querySelector('.slide-progress-bar').style.width = `${progress}%`;
+            }
+        }
+        
+        // Initialize presentation
+        new SlidePresentation();
+        
+        // Reduced motion support
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
+        }
+    </script>
+</body>
+</html>
